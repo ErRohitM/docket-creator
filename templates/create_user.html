@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="b-example-divider"></div>
+
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Create New One here</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">{{users.name}}</h3></br>
+              <form method = "POST" action="{% url 'create_worker' %}" style="padding-top:30px; padding-left:30px; width:25rem;">
+                {% csrf_token %}
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="name" id="floatingInput">
+                    <label for="floatingInput">Name</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="time" class="form-control" step="1" name="start_time" id="floatingInput">
+                    <label for="floatingInput">work_start</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="time" class="form-control" step="1" name="end_time" id="floatingInput">
+                    <label for="floatingInput">Work End</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="number" class="form-control" name="total_hours" id="floatingInput">
+                    <label for="floatingInput">wroking hours</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="number" class="form-control" name="rate_per_hour" id="floatingInput">
+                    <label for="floatingInput">wages/hour</label>
+                  </div>
+                  <label for="floatingInput">Select Purchase Order Number: for {{ supplier }}</label>
+                  <select id="purchase_order_no" name="purchase_order_no">
+                    {% for purchase_order_no in purchase_order_nos %}
+                      <option value="{{ purchase_order_no }}">{{ purchase_order_no }}</option>
+                    {% endfor %}
+                  </select></br>
+                <button class="btn btn-primary w-40 py-3 px-4" type="submit">submit</submit>
+              </form>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+{% endblock  %}

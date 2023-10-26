@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex gap-2 justify-content-center py-5">
+    <a href="{% url "create_dummy" %}"><button class="btn btn-primary d-inline-flex align-items-center" type="button">
+      Create a Docket 
+      <svg class="bi ms-1" width="20" height="20"><use xlink:href="#arrow-right-short"/></svg>
+    </button></a>
+    <a href="{% url 'downlaod_file' %}"><button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+      Download File
+      <svg class="bi ms-1" width="20" height="20"><use xlink:href="#arrow-right-short"/></svg>
+    </button></a>
+    <a href="{% url 'docket' %}"><button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+        Home
+        <svg class="bi ms-1" width="20" height="20"><use xlink:href="#arrow-right-short"/></svg>
+      </button></a>
+  </div>
+    <div class="b-example-divider"></div>
+
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Icon grid</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">{{user.name}}</h3></br>
+              <p>Work Start : {{user.start_time }}</p>
+              <p>Work End : {{user.end_time }}</p>
+              <p>Total Work Hours : {{user.work_hours }}</p>
+              <p>Rate / Hour : {{user.wages }}</p>
+              <p>Supplier Name : {{user.supplier_name }}</p>
+              <p>Purchase Order No : {{user.po_no }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock  %}

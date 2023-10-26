@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="b-example-divider"></div>
+  <div class="container px-4 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">{{ form.supplier_name.label_tag }}</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+            <div>
+              <form method="POST" action="." style="padding:40px;">
+                {% csrf_token %}
+                <div class="form-floating" style="width:25rem; padding:10px;">
+                  {{ form.supplier_name }}
+                </div>
+                <button class="btn btn-primary w-40 py-3 px-4" type="submit">Next >></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock  %}
