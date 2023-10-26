@@ -3,7 +3,7 @@
 
 ###
 
-<h4 align="left">Welcome to our project, a dynamic DOCKET creation system powered by Python, Django, and Pandas!</h4>
+<h4 align="left">Welcome to my project, a dynamic DOCKET creation system powered by Python, Django, and Pandas!</h4>
 
 ###
 
